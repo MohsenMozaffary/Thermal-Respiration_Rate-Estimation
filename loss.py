@@ -17,7 +17,7 @@ class NegativeMaxCrossCorr(nn.Module):
         output = torch.where(denom > 0, cov / denom, torch.zeros_like(cov))
         return output.mean()
 
-class NegativeMaxCrossCov(nn.Module):
+class TotalLoss(nn.Module):
     def __init__(self, Fs, high_pass, low_pass, a = 0.5, b = 0.5):
         super(NegativeMaxCrossCov, self).__init__()
         self.Fs = Fs
